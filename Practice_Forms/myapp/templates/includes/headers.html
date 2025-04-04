@@ -1,0 +1,21 @@
+<header class="p-3 bg-dark text-white">
+    <div class="row">
+        <div class="col">
+           <a class="text-light text-decoration-none" href="/blog"> <h3>Blog</h3></a>
+        </div>
+        <div class="col">
+            <div class="d-flex justify-content-center gap-3">
+               
+                <a class="text-light text-decoration-none" href="/myapp/contact">Contact</a>
+                {% if user.is_authenticated %}
+                
+                <a class="text-light text-decoration-none" href="/myapp/logout">Logout</a>
+                {% else %}
+                <a class="text-light text-decoration-none" href="/myapp/signup">Register</a>
+                <a class="text-light text-decoration-none" href="/myapp/login">Login</a>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+</header>

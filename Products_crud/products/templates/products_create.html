@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Form</title>
+</head>
+<body>
+    
+     <div class="alert "></div>
+    <h1>{% if form.instance.pk %}Update Product{% else %}Add Product{% endif %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'products_list' %}">Back to List</a>
+</body>
+</html>
