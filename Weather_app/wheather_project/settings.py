@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-$!5axp0k7@wude&k0pni-x@zb#elhyuoq^pxa#1(uqy-g!m=q_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['weather-app1-z2v4.onrender.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
