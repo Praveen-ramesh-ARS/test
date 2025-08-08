@@ -45,7 +45,7 @@ def register(request):
             return redirect('login')  # Redirect to the login page or another page
     else:
         form = RegisterForm()
-    return render(request, 'register.html', {'form': form})
+    return render(request, 'Register.html', {'form': form})
 
 
 
