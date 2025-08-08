@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+
+<div class="container-fluid">
+    <div class="row d-flex justify-content-center mt-5">
+        <div class="col-4">
+            <h3 style="color: darkblue; font-style: italic; font-family: Arial, sans-serif; font-weight: bold;">
+    Weather-based Prediction System
+</h3>
+            <div>
+                {% include 'includes/errors.html' %}
+            </div>
+            <div class=" my-3">
+                <form method="post" >
+                    {% csrf_token %}
+                    <div class="form-group">                
+                        <input type="text" class="form-control"  name="city" placeholder="Enter city name" required>
+                    </div>
+                    <div class="my-3 d-flex justify-content">                       
+                        <button type="submit" class="btn btn-primary">Predict</button>                  
+                    </div>
+
+                </form>
+                                {% if result %}
+                    <p> <span style="color: green;"> Prediction: {{ result }}</span> </p>
+                {% endif %}
+
+                {% if we %}
+                    <p><span style="color: green;">{{we.city}} city temperature is: {{ we.temperature }} °C</span></p>
+                {% endif %}
+
+        </div>
+    </div>
+</div>
+
+
+
+<!--Logout -->
+<!--{% if user.is_authenticated %}
+    <form action="{% url 'logout' %}" method="post" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Logout</button>
+    </form>-->
+{% endif %}
+
+{% endblock %}
